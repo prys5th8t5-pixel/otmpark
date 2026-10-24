@@ -6,8 +6,8 @@
 <title>OTMPark – Parkering der arrangementet er</title>
 <style>
 :root{
-  --ink:#121417; --ink2:#3c4148; --mut:#6b717a; --line:#e3e1dc; --bg:#ffffff; --sand:#f4f2ee;
-  --blue:#0a4fa3; --blue-d:#083c7c; --dark:#0f1115;
+  --ink:#EDE8DF; --ink2:#C8C2B7; --mut:#9C978D; --line:rgba(237,232,223,.10); --bg:#0D1015; --sand:#141920; --surf:#181E26;
+  --blue:#C2A36B; --blue-d:#D4B97F; --on-acc:#14110B; --dark:#08090C;
   --font:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
   --w:1200px;
 }
@@ -187,8 +187,9 @@ section{padding:110px 0}
 .gj-cta{display:flex;align-items:center;gap:20px;flex-wrap:wrap;margin-top:30px}
 .gj-cta small{font-size:14px;color:var(--mut)}
 #gjerder{background:#fff}
-#gjerder .img{position:relative;background-position:center 80%}
-#gjerder .img .credit{left:14px;right:auto;bottom:12px}
+#gjerder .img{position:relative;background-position:center 55%}
+#gjerder .img .credit{left:14px;right:auto;bottom:12px;background:rgba(8,9,12,.55);padding:3px 8px;border-radius:4px;color:rgba(255,255,255,.8)}
+#gjerder .img .credit a{color:inherit;text-decoration:underline;text-underline-offset:2px}
 .need{margin-top:40px;font-size:15px;color:var(--ink2)}
 .need b{display:block;color:var(--ink);margin-bottom:6px}
 
@@ -254,6 +255,53 @@ footer h5{color:#fff;font-size:14px;margin:0 0 14px}
 footer a{display:block;text-decoration:none;color:#b9bcc2;padding:4px 0}
 footer a:hover{color:#fff}
 .fbot{border-top:1px solid #2a2d33;margin-top:56px;padding-top:24px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:13px;color:#80848c}
+
+/* ===== dark exclusive theme ===== */
+::selection{background:var(--blue);color:var(--on-acc)}
+.kicker{text-transform:uppercase;letter-spacing:.16em;font-size:12.5px;font-weight:600}
+h1,h2{font-weight:600}
+.btn-blue{color:var(--on-acc)}
+.btn-white{background:var(--ink);color:#0D1015}
+.btn-line{border-color:rgba(237,232,223,.35);color:var(--ink)}.btn-line:hover{border-color:var(--blue);color:var(--blue)}
+.strip{background:#08090C;border-bottom:1px solid var(--line)}
+.strip nav a.on{color:var(--blue)}
+header.nav{background:rgba(13,16,21,.94);backdrop-filter:saturate(1.2) blur(10px)}
+.logo .p{color:var(--on-acc);box-shadow:inset 0 0 0 2px #0D1015,0 0 0 1.5px var(--blue)}
+.drawer{background:#0D1015}
+.burger{color:var(--ink)}.burger i{background:var(--ink);box-shadow:0 6px 0 var(--ink),0 -6px 0 var(--ink)}
+.hero:before{background:linear-gradient(0deg,rgba(8,9,12,.78),rgba(8,9,12,.35) 55%,rgba(8,9,12,.45))}
+.hero .tag{background:rgba(194,163,107,.14);border-color:rgba(194,163,107,.55);color:#E9D9B5;text-transform:uppercase;letter-spacing:.14em;font-size:12px}
+.panel{background:var(--surf);border:1px solid var(--line);box-shadow:0 24px 60px rgba(0,0,0,.5)}
+.panel .h{background:#0F1318;color:var(--ink);border-right:1px solid var(--line)}
+.panel .h b{color:var(--blue)}
+.num{border-color:var(--blue);color:var(--blue)}
+.stage{background:#141920;border:1px solid var(--line)}
+.phone{box-shadow:0 0 0 1.5px #4a4740,0 30px 70px rgba(0,0,0,.6)}
+.efak{background:var(--surf)}
+.efak .ic{color:var(--on-acc)}
+.split{background:#11151B}
+#gjerder{background:var(--bg)}
+.opts div{background:var(--surf);border:1px solid var(--line)}
+.opts em{color:var(--on-acc)}
+.ptable{border-top:1px solid var(--blue)}
+.prow .amt{color:var(--blue);font-weight:600}
+.warn{border-left-color:var(--blue);background:var(--surf)}
+.contact{background:#11151B;color:var(--ink);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.contact .cinfo{border-top-color:var(--line)}.contact .cinfo div{border-bottom-color:var(--line)}
+.contact .cinfo a{color:var(--blue)}
+.qf{background:var(--surf);border:1px solid var(--line);box-shadow:0 24px 60px rgba(0,0,0,.45)}
+.qf input[type=text],.qf input[type=email],.qf input[type=tel],.qf input[type=number],.qf textarea{background:#0F1318;border-color:rgba(237,232,223,.16);color:var(--ink)}
+.qf input::placeholder,.qf textarea::placeholder{color:#6f6b64}
+.qf input:focus,.qf textarea:focus{box-shadow:0 0 0 3px rgba(194,163,107,.2)}
+.qf .chip{background:#0F1318;border-color:rgba(237,232,223,.16)}
+.qf .chip:has(input:checked){background:rgba(194,163,107,.12)}
+.qf .err{color:#E8998F}
+.qf .bad input[type=text],.qf .bad input[type=email],.qf .bad input[type=tel],.qf .bad input[type=number],.qf .bad .chip{border-color:#E8998F}
+.qf .done{background:rgba(120,170,125,.12);border-color:rgba(120,170,125,.4)}
+footer{background:#08090C;border-top:1px solid var(--line)}
+footer .logo{color:var(--ink)}
+.fbot{border-top-color:var(--line)}
+input[type=checkbox]{accent-color:var(--blue)}
 
 @media (max-width:1100px){
   .links,.nav .btn{display:none}
@@ -468,10 +516,10 @@ footer a:hover{color:#fff}
 </section>
 
 <div class="split" id="gjerder">
-  <div class="img" style="background-image:url({{gjerde}})" role="img" aria-label="Byggegjerder satt opp rundt en byggeplass"><span class="credit">Foto: Troy Mortier / Unsplash</span></div>
+  <div class="img" style="background-image:url({{gjerde}})" role="img" aria-label="Byggegjerder med føtter rundt et telt på et arrangementsområde"><span class="credit">Foto: <a href="https://commons.wikimedia.org/wiki/File:Aldenham_Country_Park_event_field_with_vintage_and_frame_tents_and_Heras_fence.jpg" target="_blank" rel="noopener">Acabashi / Wikimedia Commons</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.no" target="_blank" rel="noopener">CC BY-SA 4.0</a> (beskåret)</span></div>
   <div class="txt">
     <div class="kicker">Gjerdeutleie</div>
-    <h2>Byggegjerder til arrangementet.</h2>
+    <h2>Gjerder til arrangementet.</h2>
     <p class="lead">Stenge av et område, lage inngang eller holde parkeringen adskilt? Vi leier ut solide byggegjerder.</p>
     <div class="specs">
       <div><b>2,5 m</b>høye</div>
@@ -601,7 +649,7 @@ footer a:hover{color:#fff}
       <div><h5>Informasjon</h5><a href="#personvern">Personvern</a><a href="#">Parkeringsvilkår</a><a href="#">Informasjonskapsler</a><a href="#">Tilgjengelighet</a></div>
     </div>
     <div class="fbot"><span>[Selskapsnavn AS] · Org.nr. [000 000 000] · [adresse]</span><span>© 2026 OTMPark (arbeidsnavn) · Forhåndsvisning</span></div>
-    <p style="font-size:12px;color:#6a6e75;margin-top:14px">Foto: Peter Robbins, Alsu Vershinina, Artem Balashevsky, Lancelot Morningstar, Milan Malkomes og Troy Mortier / Unsplash.</p>
+    <p style="font-size:12px;color:#6f6b64;margin-top:14px">Foto: Peter Robbins, Alsu Vershinina, Artem Balashevsky, Lancelot Morningstar, Milan Malkomes / Unsplash. Gjerdefoto: Acabashi / Wikimedia Commons, CC BY-SA 4.0 (beskåret).</p>
   </div>
 </footer>
 <script>
