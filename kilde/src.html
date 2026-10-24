@@ -303,6 +303,25 @@ footer .logo{color:var(--ink)}
 .fbot{border-top-color:var(--line)}
 input[type=checkbox]{accent-color:var(--blue)}
 
+/* personvern summary + overlay */
+.pvsum{list-style:none;margin:24px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line);max-width:640px}
+.pvsum li{padding:16px 14px 16px 0;font-size:14px;color:var(--mut)}
+.pvsum li+li{padding-left:14px;border-left:1px solid var(--line)}
+.pvsum b{display:block;color:var(--ink);font-size:16px;margin-bottom:2px}
+.pvlinks{display:flex;align-items:center;gap:22px;flex-wrap:wrap;margin-top:26px}
+.pvlinks .btn{height:46px;padding:0 22px;font-size:15px}
+.pvmail{color:var(--blue);font-weight:600;font-size:15px;text-underline-offset:3px}
+.pvo{position:fixed;inset:0;z-index:200;background:var(--bg);overflow-y:auto;display:none;-webkit-overflow-scrolling:touch}
+.pvo.open{display:block}
+body.pvlock{overflow:hidden}
+.pvo-bar{position:sticky;top:0;z-index:2;background:rgba(13,16,21,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.pvo-bar .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.pvo-x{background:none;border:1px solid rgba(237,232,223,.3);color:var(--ink);border-radius:999px;height:40px;padding:0 18px;font:600 14.5px var(--font);cursor:pointer}
+.pvo-x:hover{border-color:var(--blue);color:var(--blue)}
+.pvo-in{padding:56px 32px 100px}
+@media (max-width:860px){.pvsum{grid-template-columns:1fr}.pvsum li+li{padding-left:0;border-left:0;border-top:1px solid var(--line)}.pvo-in{padding:36px 20px 80px}}
+{{PV_CSS}}
+
 @media (max-width:1100px){
   .links,.nav .btn{display:none}
   .burger{display:inline-flex}
@@ -552,7 +571,13 @@ input[type=checkbox]{accent-color:var(--blue)}
     <div>
       <div class="kicker">Personvern og skiltlesere</div>
       <h2 style="font-size:clamp(28px,3.2vw,38px)">Skiltnummeret brukes til én ting.</h2>
-      <p>Skiltleserne registrerer skiltnummeret når du kjører inn og ut, slik at betalingen eller e-fakturaen havner på riktig bil. Hvordan opplysningene behandles og hvor lenge de lagres, står i personvernerklæringen [lenke]. Du kan be om innsyn, retting og sletting på <a href="mailto:OTMPark@proton.me">OTMPark@proton.me</a>.</p>
+      <p>Skiltleserne registrerer skiltnummeret når du kjører inn og ut, slik at betalingen eller e-fakturaen havner på riktig bil. Nettsiden har ingen sporing og ingen analysecookies.</p>
+      <ul class="pvsum">
+        <li><b>Skilt og tidspunkt</b><span>Kun for betaling og e-faktura</span></li>
+        <li><b>Betalte parkeringer</b><span>Slettes etter [x] dager</span></li>
+        <li><b>Dine rettigheter</b><span>Innsyn, retting og sletting</span></li>
+      </ul>
+      <div class="pvlinks"><a class="btn btn-line" href="#personvernerklaering">Les personvernerklæringen</a><a class="pvmail" href="mailto:OTMPark@proton.me">OTMPark@proton.me</a></div>
       <div class="warn"><b>Pass på falske SMS.</b> Betal bare via QR-koden på skiltet vårt, hos verten eller med e-faktura i nettbanken. Får du en SMS med betalingslenke i vårt navn – ikke trykk.</div>
     </div>
   </div>
@@ -646,7 +671,7 @@ input[type=checkbox]{accent-color:var(--blue)}
       <div><a class="logo" href="#"><span class="p">P</span>OTMPark</a><p style="max-width:300px">Parkering der arrangementet er. Uten bom, uten automat, uten bot.</p></div>
       <div><h5>Parkere</h5><a href="#betal">Betal parkering</a><a href="#priser">Priser</a><a href="#hjelp">Spørsmål og svar</a></div>
       <div><h5>Samarbeid</h5><a href="#arrangorer">For arrangører</a><a href="#gjerder">Gjerdeutleie</a><a href="#grunneiere">For grunneiere</a><a href="#kontakt">Kontakt</a></div>
-      <div><h5>Informasjon</h5><a href="#personvern">Personvern</a><a href="#">Parkeringsvilkår</a><a href="#">Informasjonskapsler</a><a href="#">Tilgjengelighet</a></div>
+      <div><h5>Informasjon</h5><a href="#personvernerklaering">Personvernerklæring</a><a href="#">Parkeringsvilkår</a><a href="#pv-5">Informasjonskapsler</a><a href="#">Tilgjengelighet</a></div>
     </div>
     <div class="fbot"><span>[Selskapsnavn AS] · Org.nr. [000 000 000] · [adresse]</span><span>© 2026 OTMPark (arbeidsnavn) · Forhåndsvisning</span></div>
     <p style="font-size:12px;color:#6f6b64;margin-top:14px">Foto: Peter Robbins, Alsu Vershinina, Artem Balashevsky, Lancelot Morningstar, Milan Malkomes / Unsplash. Gjerdefoto: Acabashi / Wikimedia Commons, CC BY-SA 4.0 (beskåret).</p>
@@ -688,6 +713,21 @@ function sendReq(){
 }
 document.addEventListener('input',function(e){var w=e.target.closest&&e.target.closest('.f');if(w&&w.classList.contains('bad')&&(e.target.value||'').trim())w.classList.remove('bad')});
 document.addEventListener('change',function(e){if(e.target.name==='lev')$('w-lev').classList.remove('bad')});
+</script>
+
+<div class="pvo" id="personvernerklaering" role="dialog" aria-modal="true" aria-label="Personvernerklæring" tabindex="-1">
+  <div class="pvo-bar"><div class="wrap"><a class="logo" href="#" onclick="pvClose();return false"><span class="p">P</span>OTMPark</a><button class="pvo-x" type="button" onclick="pvClose()">Lukk ✕</button></div></div>
+  <div class="pvo-in">
+{{PV_BODY}}
+  </div>
+</div>
+<script>
+function pvOpen(h){var o=document.getElementById('personvernerklaering');o.classList.add('open');document.body.classList.add('pvlock');var t=h&&h!=='personvernerklaering'&&document.getElementById(h);if(t){o.scrollTop=0;t.scrollIntoView()}else{o.scrollTop=0}o.focus({preventScroll:true})}
+function pvClose(){document.getElementById('personvernerklaering').classList.remove('open');document.body.classList.remove('pvlock');history.replaceState(null,'','#personvern');var s=document.getElementById('personvern');if(s)s.scrollIntoView()}
+function pvRoute(){var h=decodeURIComponent(location.hash.slice(1));if(h==='personvernerklaering'||/^pv-\d$/.test(h))pvOpen(h)}
+window.addEventListener('hashchange',pvRoute);pvRoute();
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&document.getElementById('personvernerklaering').classList.contains('open'))pvClose()});
+document.getElementById('personvernerklaering').addEventListener('click',function(e){var a=e.target.closest('a[href^="#pv-"]');if(a){e.preventDefault();var t=document.getElementById(a.getAttribute('href').slice(1));if(t)t.scrollIntoView({behavior:'smooth'})}});
 </script>
 </body>
 </html>
