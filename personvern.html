@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="nb">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Personvernerklæring – OTMPark</title>
+<meta name="description" content="Slik behandler OTMPark personopplysninger: skiltgjenkjenning, betaling, e-faktura, forespørsler og dine rettigheter.">
+<style>
+:root{--ink:#EDE8DF;--ink2:#C8C2B7;--mut:#9C978D;--line:rgba(237,232,223,.10);--bg:#0D1015;--surf:#181E26;--blue:#C2A36B;--on-acc:#14110B;--font:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--font);color:var(--ink);background:var(--bg);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
+::selection{background:var(--blue);color:var(--on-acc)}
+h1,h2,h3{margin:0;letter-spacing:-.02em;line-height:1.1}p{margin:0}a{color:inherit}
+.wrap{max-width:1200px;margin:0 auto;padding:0 32px}
+.kicker{font-size:12.5px;font-weight:600;color:var(--blue);margin-bottom:14px;text-transform:uppercase;letter-spacing:.16em}
+.bar{position:sticky;top:0;z-index:5;background:rgba(13,16,21,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.bar .wrap{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:800;font-size:21px;letter-spacing:-.03em}
+.logo .p{width:32px;height:32px;border-radius:6px;background:var(--blue);color:var(--on-acc);display:grid;place-items:center;font-size:21px;font-weight:800;box-shadow:inset 0 0 0 2px #0D1015,0 0 0 1.5px var(--blue)}
+.back{font-size:14.5px;font-weight:600;text-decoration:none;border:1px solid rgba(237,232,223,.3);border-radius:999px;padding:9px 18px}
+.back:hover{border-color:var(--blue);color:var(--blue)}
+main{padding:64px 32px 110px}
+footer{border-top:1px solid var(--line);background:#08090C;color:#80848c;font-size:13px;padding:28px 0}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+@media (max-width:760px){.wrap{padding:0 20px}main{padding:40px 20px 80px}body{font-size:16px}}
+.pv{max-width:820px;margin:0 auto;color:var(--ink)}
+.pv-head h1{font-size:clamp(38px,5vw,60px);font-weight:600;letter-spacing:-.035em;line-height:1.02}
+.pv-lead{font-size:19px;color:var(--ink2);margin-top:18px;max-width:600px}
+.pv-meta{font-size:13px;color:var(--mut);margin-top:14px}
+.pv-tldr{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden;margin:40px 0 28px}
+.pv-tldr div{background:var(--surf);padding:22px 22px 24px}
+.pv-tldr b{display:block;color:var(--blue);font-size:16px;margin-bottom:6px}
+.pv-tldr span{font-size:15px;color:var(--ink2)}
+.pv-toc{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+.pv-toc a{font-size:13.5px;text-decoration:none;color:var(--ink2);border:1px solid var(--line);border-radius:999px;padding:6px 13px}
+.pv-toc a:hover{border-color:var(--blue);color:var(--blue)}
+.pv section{scroll-margin-top:84px;padding:44px 0 4px;border-top:1px solid var(--line);margin-top:36px}
+.pv section:first-of-type{margin-top:28px}
+.pv h2{font-size:clamp(24px,2.6vw,30px);font-weight:600;display:flex;gap:16px;align-items:baseline}
+.pv h2 em{font-style:normal;font-size:13px;letter-spacing:.14em;color:var(--blue);font-weight:600}
+.pv h3{font-size:19px;margin:0 0 8px}
+.pv p{color:var(--ink2);margin-top:14px}
+.pv a{color:var(--blue)}
+.pv code{font:13px ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--ink);background:#0F1318;border:1px solid var(--line);border-radius:5px;padding:2px 6px;word-break:break-all}
+.pv-card{margin:22px 0 0;border:1px solid var(--line);border-radius:12px;background:var(--surf)}
+.pv-card div{display:flex;justify-content:space-between;gap:20px;padding:14px 20px}
+.pv-card div+div{border-top:1px solid var(--line)}
+.pv-card dt{color:var(--mut)}.pv-card dd{margin:0;font-weight:600;text-align:right}
+.pv-item{margin-top:26px;padding:24px 26px;background:var(--surf);border:1px solid var(--line);border-radius:14px}
+.pv-item p{margin-top:0;margin-bottom:6px}
+.pv-facts{list-style:none;margin:12px 0 0;padding:0}
+.pv-facts li{display:grid;grid-template-columns:120px 1fr;gap:16px;padding:11px 0;border-top:1px solid var(--line);font-size:15.5px;color:var(--ink2)}
+.pv-facts li span{color:var(--blue);font-size:12.5px;text-transform:uppercase;letter-spacing:.1em;font-weight:600;padding-top:3px}
+.pv-table{margin-top:22px;border-top:1px solid var(--blue);font-size:15.5px}
+.pv-table div{display:grid;grid-template-columns:1fr 1.4fr;gap:20px;padding:13px 0;border-bottom:1px solid var(--line)}
+.pv-table .th{font-size:12.5px;text-transform:uppercase;letter-spacing:.1em;color:var(--mut);font-weight:600}
+.pv-table div span:first-child{font-weight:600}
+.pv-table div span+span{color:var(--ink2)}
+.pv-ck div{grid-template-columns:1.1fr 2fr 1fr}
+.pv-small{font-size:14px;color:var(--mut)!important}
+.pv-rights{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:22px}
+.pv-rights div{border:1px solid var(--line);border-radius:12px;padding:18px;background:var(--surf)}
+.pv-rights b{display:block;margin-bottom:4px}
+.pv-rights span{font-size:14.5px;color:var(--ink2)}
+@media (max-width:760px){
+  .pv-tldr,.pv-rights{grid-template-columns:1fr}
+  .pv-facts li{grid-template-columns:1fr;gap:2px}
+  .pv-table div,.pv-ck div{grid-template-columns:1fr;gap:4px}
+  .pv-table .th{display:none!important}
+  .pv-item{padding:20px 18px}
+  .pv-card div{flex-direction:column;gap:2px}.pv-card dd{text-align:left}
+}
+
+</style>
+</head>
+<body>
+<div class="bar"><div class="wrap"><a class="logo" href="./"><span class="p">P</span>OTMPark</a><a class="back" href="./">← Til forsiden</a></div></div>
+<main>
+<article class="pv">
+  <header class="pv-head">
+    <div class="kicker">Personvern</div>
+    <h1>Personvernerklæring</h1>
+    <p class="pv-lead">Her forklarer vi hvilke opplysninger OTMPark behandler, hvorfor, og hvilke rettigheter du har. Kort og uten omveier.</p>
+    <p class="pv-meta">Sist oppdatert 24. oktober 2026</p>
+  </header>
+
+  <div class="pv-tldr">
+    <div><b>Skiltnummer</b><span>Brukes til å koble parkeringen til riktig betaling eller e-faktura.</span></div>
+    <div><b>Ingen sporing</b><span>Nettsiden har ingen analyseverktøy, annonser eller sporingscookies.</span></div>
+    <div><b>Du bestemmer</b><span>Be om innsyn, retting eller sletting på OTMPark@proton.me.</span></div>
+  </div>
+
+  <nav class="pv-toc" aria-label="Innhold">
+    <a href="#pv-1">Ansvarlig</a><a href="#pv-2">Hva og hvorfor</a><a href="#pv-3">Mottakere</a><a href="#pv-4">Utenfor EØS</a><a href="#pv-5">Informasjonskapsler</a><a href="#pv-6">Rettigheter</a><a href="#pv-7">Klage</a>
+  </nav>
+
+  <section id="pv-1">
+    <h2><em>01</em>Behandlingsansvarlig</h2>
+    <p>OTMPark er behandlingsansvarlig for personopplysningene som beskrives her.</p>
+    <dl class="pv-card">
+      <div><dt>Virksomhet</dt><dd>OTMPark ([Selskapsnavn AS])</dd></div>
+      <div><dt>Org.nr.</dt><dd>[org.nr.]</dd></div>
+      <div><dt>Adresse</dt><dd>[adresse]</dd></div>
+      <div><dt>E-post</dt><dd><a href="mailto:OTMPark@proton.me">OTMPark@proton.me</a></dd></div>
+    </dl>
+  </section>
+
+  <section id="pv-2">
+    <h2><em>02</em>Hva vi behandler, og hvorfor</h2>
+    <p>Vi samler bare inn det vi trenger for å drifte parkeringen og svare deg. Rettslig grunnlag er personvernforordningen (GDPR) artikkel 6.</p>
+
+    <div class="pv-item">
+      <h3>Parkering med skiltgjenkjenning</h3>
+      <p>Kameraer ved innkjøringen leser skiltet når bilen kjører inn og ut. Det er skiltet ved plassen som forteller at området har skiltgjenkjenning.</p>
+      <ul class="pv-facts">
+        <li><span>Opplysninger</span>Skiltnummer, tidspunkt inn og ut, parkeringsplass og arrangement, bilde av skiltet.</li>
+        <li><span>Formål</span>Registrere parkeringen og koble den til riktig betaling eller e-faktura.</li>
+        <li><span>Grunnlag</span>Art. 6 nr. 1 b (avtale om parkering) og art. 6 nr. 1 f (berettiget interesse i å kreve inn betaling).</li>
+        <li><span>Lagring</span>Betalte parkeringer slettes [x] dager etter arrangementet. Ellers til kravet er oppgjort.</li>
+      </ul>
+    </div>
+
+    <div class="pv-item">
+      <h3>Betaling med QR-kode og Vipps</h3>
+      <ul class="pv-facts">
+        <li><span>Opplysninger</span>Skiltnummer, valgt billett, beløp, tidspunkt og betalingsreferanse fra Vipps.</li>
+        <li><span>Formål</span>Gjennomføre betalingen, gi deg kvittering og markere bilen som betalt.</li>
+        <li><span>Grunnlag</span>Art. 6 nr. 1 b (avtale) og art. 6 nr. 1 c (bokføringsplikt).</li>
+        <li><span>Lagring</span>Regnskapsopplysninger oppbevares så lenge bokføringsloven krever, normalt 5 år.</li>
+      </ul>
+    </div>
+
+    <div class="pv-item">
+      <h3>E-faktura og inkasso</h3>
+      <p>Har du ikke betalt på stedet, finner vi registrert eier eller bruker av bilen i Motorvognregisteret og sender e-faktura til nettbanken. Ubetalte krav overføres til inkasso.</p>
+      <ul class="pv-facts">
+        <li><span>Opplysninger</span>Skiltnummer, navn, adresse, fødselsnummer eller org.nr. ved behov for e-faktura, fakturabeløp og betalingsstatus.</li>
+        <li><span>Formål</span>Fakturere parkeringen og følge opp ubetalte krav.</li>
+        <li><span>Grunnlag</span>Art. 6 nr. 1 b (avtale), art. 6 nr. 1 c (bokføringsplikt) og art. 6 nr. 1 f (berettiget interesse i å få betalt).</li>
+        <li><span>Lagring</span>Til kravet er oppgjort, deretter så lenge bokføringsloven krever, normalt 5 år.</li>
+      </ul>
+    </div>
+
+    <div class="pv-item">
+      <h3>Forespørsler og e-post</h3>
+      <p>Skjemaet på nettsiden sender ingenting av seg selv. Det åpner e-postprogrammet ditt, og det er du som trykker Send.</p>
+      <ul class="pv-facts">
+        <li><span>Opplysninger</span>Navn, firma, e-post, telefon, arrangement, dato og det du skriver i meldingen.</li>
+        <li><span>Formål</span>Svare deg og lage tilbud på parkering eller gjerder.</li>
+        <li><span>Grunnlag</span>Art. 6 nr. 1 b (tiltak før avtale) og art. 6 nr. 1 f (berettiget interesse i å svare på henvendelser).</li>
+        <li><span>Lagring</span>[x] måneder etter siste kontakt, eller så lenge en avtale varer.</li>
+      </ul>
+    </div>
+
+    <div class="pv-item">
+      <h3>Besøk på nettsiden</h3>
+      <p>Vi bruker ikke analyseverktøy, annonsenettverk eller sporingscookies, og vi måler ikke hvordan du bruker siden. Leverandøren som har siden på nett, registrerer tekniske logger med IP-adresse for å levere siden og stoppe angrep.</p>
+    </div>
+  </section>
+
+  <section id="pv-3">
+    <h2><em>03</em>Hvem vi deler opplysninger med</h2>
+    <p>Vi selger aldri personopplysninger. Leverandørene under behandler opplysninger på våre vegne etter databehandleravtale, eller er selvstendig ansvarlige der det er angitt.</p>
+    <div class="pv-table" role="table">
+      <div role="row" class="th"><span role="columnheader">Mottaker</span><span role="columnheader">Hva de gjør</span></div>
+      <div role="row"><span role="cell">Proton AG</span><span role="cell">E-post og forespørsler</span></div>
+      <div role="row"><span role="cell">Vipps MobilePay</span><span role="cell">Betaling med QR-kode (selvstendig ansvarlig for egen behandling)</span></div>
+      <div role="row"><span role="cell">Bank og e-fakturaformidler [navn]</span><span role="cell">Sende e-faktura og ta imot betaling</span></div>
+      <div role="row"><span role="cell">Inkassopartner [navn]</span><span role="cell">Følge opp ubetalte krav</span></div>
+      <div role="row"><span role="cell">Leverandør av skiltgjenkjenning og lagring [navn]</span><span role="cell">Kameraer og lagring av passeringer</span></div>
+      <div role="row"><span role="cell">Regnskapsfører [navn]</span><span role="cell">Regnskap og bokføring</span></div>
+      <div role="row"><span role="cell">GitHub</span><span role="cell">Har nettsiden på nett (tekniske logger)</span></div>
+      <div role="row"><span role="cell">Statens vegvesen</span><span role="cell">Kilde: oppslag i Motorvognregisteret for å finne eier eller bruker</span></div>
+    </div>
+    <p class="pv-small">Vi utleverer også opplysninger til offentlige myndigheter når loven krever det.</p>
+  </section>
+
+  <section id="pv-4">
+    <h2><em>04</em>Overføring utenfor EØS</h2>
+    <p>Proton har servere i Sveits, som EU har godkjent som trygt land. GitHub er et amerikansk selskap, og overføringen dit skjer etter EU–USA-rammeverket for personvern (Data Privacy Framework) og EUs standard personvernbestemmelser.</p>
+  </section>
+
+  <section id="pv-5">
+    <h2><em>05</em>Informasjonskapsler og lokal lagring</h2>
+    <p>Nettsiden bruker <b>ingen informasjonskapsler for sporing, analyse eller reklame</b>. Derfor ber vi heller ikke om samtykke. Det eneste som lagres i nettleseren din, er det som er strengt nødvendig for at siden skal virke:</p>
+    <div class="pv-table pv-ck" role="table">
+      <div role="row" class="th"><span role="columnheader">Navn</span><span role="columnheader">Formål</span><span role="columnheader">Varighet</span></div>
+      <div role="row"><span role="cell"><code>staticrypt_passphrase</code></span><span role="cell">Husker at enheten er låst opp når du har krysset av for «Husk meg» på passordsiden. Gjelder bare forhåndsvisningen.</span><span role="cell">365 dager, eller til du tømmer nettleserdata</span></div>
+      <div role="row"><span role="cell"><code>staticrypt_expiration</code></span><span role="cell">Når «Husk meg» utløper.</span><span role="cell">365 dager</span></div>
+    </div>
+    <p class="pv-small">Begge lagres lokalt i nettleseren (localStorage) og sendes aldri til oss. Vil du fjerne dem, tømmer du nettleserdata for siden. Hvis vi en gang tar i bruk verktøy som krever samtykke, spør vi deg først, og avslå blir like enkelt som å godta.</p>
+  </section>
+
+  <section id="pv-6">
+    <h2><em>06</em>Dine rettigheter</h2>
+    <div class="pv-rights">
+      <div><b>Innsyn</b><span>Få vite hva vi har registrert om deg, og en kopi.</span></div>
+      <div><b>Retting</b><span>Få rettet opplysninger som er feil.</span></div>
+      <div><b>Sletting</b><span>Få slettet opplysninger vi ikke lenger trenger.</span></div>
+      <div><b>Begrensning</b><span>Be oss om å stanse behandlingen en periode.</span></div>
+      <div><b>Protest</b><span>Protestere mot behandling som bygger på berettiget interesse.</span></div>
+      <div><b>Dataportabilitet</b><span>Få opplysningene i et maskinlesbart format.</span></div>
+    </div>
+    <p>Send en e-post til <a href="mailto:OTMPark@proton.me">OTMPark@proton.me</a>. Gjelder det en parkering, oppgi skiltnummer og dato. Vi svarer innen én måned.</p>
+  </section>
+
+  <section id="pv-7">
+    <h2><em>07</em>Klage til Datatilsynet</h2>
+    <p>Mener du at vi behandler opplysninger i strid med regelverket, kan du klage til Datatilsynet på <a href="https://www.datatilsynet.no" target="_blank" rel="noopener">datatilsynet.no</a>. Vi setter pris på om du tar kontakt med oss først, så vi kan rydde opp.</p>
+  </section>
+
+  <section>
+    <h2><em>08</em>Endringer</h2>
+    <p>Vi oppdaterer erklæringen når vi endrer hvordan vi behandler opplysninger. Datoen øverst viser når den sist ble endret.</p>
+  </section>
+</article>
+
+</main>
+<footer><div class="wrap"><span>[Selskapsnavn AS] · Org.nr. [org.nr.] · <a href="mailto:OTMPark@proton.me">OTMPark@proton.me</a></span><span>© 2026 OTMPark (arbeidsnavn)</span></div></footer>
+</body>
+</html>
